@@ -21,7 +21,7 @@
 //	Åúï‘íl
 //					ñ≥Çµ
 //==============================================================
-SE::SE(MMLfile* MML, unsigned int _id, _CHAR _strName[]):
+SE::SE(MMLfile* MML, unsigned int _id, const _CHAR _strName[]):
 	TrackSet(MML, _id, false, true, _strName)
 {
 	

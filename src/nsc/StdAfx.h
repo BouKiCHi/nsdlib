@@ -64,7 +64,7 @@ class	MMLfile;
 class	Sub;
 
 typedef struct {
-	char*	str;
+	const char*	str;
 	int		id;
 } Command_Info;
 

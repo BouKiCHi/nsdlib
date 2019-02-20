@@ -22,13 +22,13 @@ OBJS_DIR = objs
 SRCS_BASE = $(basename $(SRCS))
 OBJS = $(addprefix $(OBJS_DIR)/,$(addsuffix .o,$(SRCS_BASE)))
 
-
-PROGRAM		= nsc
+PROGRAM = nsc
 
 all: makedir $(PROGRAM)
 
 $(PROGRAM): $(OBJS)
 	$(CXX) -o $@ $^ $(LDFLAGS) $(LIBS)
+	strip $@
 
 $(OBJS_DIR)/%.o : $(UTF8DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
