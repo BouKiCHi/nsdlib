@@ -4,23 +4,19 @@
 
 CC			= gcc -m32 -mmacosx-version-min=10.6 -isysroot /Developer/SDKs/MacOSX10.6.sdk
 CXX			= g++ -m32 -mmacosx-version-min=10.6 -isysroot /Developer/SDKs/MacOSX10.6.sdk
-CFLAGS		= -O3 -Wall -I.
-CXXFLAGS	= -O3 -Wall -I.
+CFLAGS		= -O3 -Wall -I..
+CXXFLAGS	= -O3 -Wall -I..
 
 # CFLAGS		= -finput-charset=cp932 -fexec-charset=utf-8 -O4 -Wall 
 # CXXFLAGS	= -finput-charset=cp932 -fexec-charset=utf-8 -O4 -Wall
 
 
-DEST		= ../../bin
+DEST		= ../../../bin
 LIBS		= -lm
 
 UTF8DIR = src_utf8
 
-SRCS = BGM.cpp DPCM.cpp DPCMinfo.cpp Envelop.cpp FileInput.cpp FileOutput.cpp \
- MMLfile.cpp mml_Address.cpp mml_general.cpp mml_repeat.cpp mml_note.cpp mml_poke.cpp \
- MusicEvent.cpp MusicFile.cpp MusicHeader.cpp MusicItem.cpp MusicTrack.cpp N163.cpp \
- nsc.cpp Option.cpp SE.cpp StdAfx.cpp Sub.cpp TrackSet.cpp VRC7.cpp FDSC.cpp FDSM.cpp \
- SearchPass.cpp Patch.cpp
+include Makefile.common
 
 OBJS_DIR = objs
 SRCS_BASE = $(basename $(SRCS))
@@ -46,7 +42,8 @@ makedir :
 	mkdir -p $(UTF8DIR)
 
 clean:
-	rm -f $(OBJS) $(PROGRAM)
+	rm -f $(PROGRAM)
+	rm -rf $(OBJS_DIR)
 
 install: $(PROGRAM)
 	cp $(PROGRAM) $(DEST)

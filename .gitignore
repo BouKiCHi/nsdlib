@@ -3,6 +3,6 @@ xcuserdata
 build/
 DerivedData
 
-src/nsc/objs
-src/nsc/src_utf8
-
+src/nsc/osx/nsc
+src/nsc/osx/objs
+src/nsc/osx/src_utf8

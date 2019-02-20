@@ -1,0 +1,22 @@
+all: makedir convert
+
+include Makefile.common
+
+UTF8DIR = src_utf8
+SRCS_UTF8 = $(addprefix $(UTF8DIR)/,$(SRCS))
+
+
+convert : $(SRCS_UTF8)
+
+$(UTF8DIR)/%.cpp : ../%.cpp
+	echo $@
+	iconv -f cp932 -t utf8 $^ > $@ 
+
+
+
+makedir :
+	mkdir -p $(UTF8DIR)
+
+clean:
+	rm -rf $(UTF8DIR) 
+
