@@ -3,12 +3,10 @@
 #
 
 ARCH_FLAGS = -m32 -mmacosx-version-min=10.6 -isysroot /Developer/SDKs/MacOSX10.6.sdk
-CC			= gcc-4.2 $(ARCH_FLAGS) 
-CXX			= g++-4.2 $(ARCH_FLAGS)
-
+CC			= gcc $(ARCH_FLAGS) 
+CXX			= g++ $(ARCH_FLAGS)
 
 COMMON_FLAGS = -O3 -Wall -I.. 
-COMMON_FLAGS += -finput-charset=cp932 -fexec-charset=utf-8 
 CFLAGS		= $(COMMON_FLAGS)
 CXXFLAGS	= $(COMMON_FLAGS)
 
@@ -16,7 +14,7 @@ CXXFLAGS	= $(COMMON_FLAGS)
 DEST		= ../../../bin
 LIBS		= -lm
 
-SRCDIR = ..
+SRCDIR = src_utf8
 
 include Makefile.common
 

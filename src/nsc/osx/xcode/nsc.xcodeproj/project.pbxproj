@@ -322,24 +322,30 @@
 		D9BF36DA221D55A100E64650 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libstdc++";
+				GCC_VERSION = 4.2;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.6;
 				USER_HEADER_SEARCH_PATHS = ../..;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
 		D9BF36DB221D55A100E64650 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libstdc++";
+				GCC_VERSION = 4.2;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.6;
 				USER_HEADER_SEARCH_PATHS = ../..;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};
