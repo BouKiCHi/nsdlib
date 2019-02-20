@@ -25,6 +25,12 @@ BGM::BGM(MMLfile* MML, unsigned int _id, const _CHAR _strName[]):
 {
 }
 
+BGM::BGM(MMLfile* MML, unsigned int _id):
+	TrackSet(MML, _id, false, false, _T("BGM"))
+{
+}
+
+
 //==============================================================
 //		デストラクタ
 //--------------------------------------------------------------

@@ -1,0 +1,28 @@
+all: makedir convert
+
+SRCS = BGM.cpp DPCM.cpp DPCMinfo.cpp Envelop.cpp FileInput.cpp FileOutput.cpp \
+ MMLfile.cpp mml_Address.cpp mml_general.cpp mml_repeat.cpp mml_note.cpp mml_poke.cpp \
+ MusicEvent.cpp MusicFile.cpp MusicHeader.cpp MusicItem.cpp MusicTrack.cpp N163.cpp \
+ nsc.cpp Option.cpp SE.cpp StdAfx.cpp Sub.cpp TrackSet.cpp VRC7.cpp FDSC.cpp FDSM.cpp \
+ SearchPass.cpp Patch.cpp
+
+
+UTF8DIR = src_utf8
+SRCS_UTF8 = $(addprefix $(UTF8DIR)/,$(SRCS))
+
+
+convert : $(SRCS_UTF8)
+
+
+$(UTF8DIR)/%.cpp : ./%.cpp
+	echo $@
+	iconv -f cp932 -t utf8 $^ > $@ 
+
+
+
+makedir :
+	mkdir -p $(UTF8DIR)
+
+clean:
+	rm -rf $(UTF8DIR) 
+
