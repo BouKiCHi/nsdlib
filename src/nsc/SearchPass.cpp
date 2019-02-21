@@ -103,7 +103,7 @@ void		SearchPass::debug()
 //==============================================================
 void		SearchPass::add_one(string* _str)
 {
-	unsigned	int		i	= _str->size();
+	unsigned long i	= _str->size();
 	char	c;
 
 	if(_str->empty() == false){

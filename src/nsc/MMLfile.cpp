@@ -284,7 +284,7 @@ void	MMLfile::CallMacro(void)
 	char							cData;
 	int								i		= 0;
 	int								n		= 0;
-	int								iSize	= ptcMac.size();
+	int								iSize	= (int)ptcMac.size();
 	string							_name	= "";
 	string*							strMac	= new	string[iSize];
 	map<string,string>::iterator	itMac	= ptcMac.begin();
@@ -412,7 +412,7 @@ int		MMLfile::tellg(void)
 	if(p_macro > 0){
 		i = nowMacro.line;
 	} else {
-		i = nowFile->tellg();
+		i = (int)nowFile->tellg();
 	}
 
 	return(i);
@@ -429,7 +429,7 @@ int		MMLfile::tellg(void)
 void	MMLfile::StreamPointerMove(long iSize)
 {
 	if(p_macro > 0){
-		nowMacro.line = iSize;
+		nowMacro.line = (int)iSize;
 	} else {
 		nowFile->StreamPointerMove(iSize);
 	}

@@ -191,7 +191,7 @@ unsigned int	MusicTrack::TickCount(MusicFile* MUS)
 			}
 			iCode		=	(*itItem)->getCode((unsigned int)0);
 			if((f_RepeatA == false) && (f_RepeatB == false)){
-				offset_now	+=	(*itItem)->getSize();
+				offset_now	+=	(int)(*itItem)->getSize();
 			}
 			if(iCode < 0x80){
 				//command

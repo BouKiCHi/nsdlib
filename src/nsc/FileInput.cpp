@@ -81,7 +81,7 @@ void	FileInput::fileopen(const char*	_strFileName,SearchPass* _pass)
 		int		iSize	= _pass->count();
 		string	name;
 		string	workName= string(_strFileName);
-		int		loc		= workName.rfind('/');
+		unsigned long loc		= workName.rfind('/');
 
 		//指定のファイルにパスが書かれていたら、消す。
 		if(loc != string::npos){
@@ -180,10 +180,10 @@ unsigned	char	FileInput::cRead()
 unsigned	int	FileInput::GetSize(){
 
 	unsigned	int	iData;
-	unsigned	int	iDataT = tellg();
+	unsigned	int	iDataT = (int)tellg();
 
 	seekg(0		,ios::end);
-	iData = tellg();
+	iData = (int)tellg();
 	seekg(iDataT,ios::beg);
 
 	return(iData);

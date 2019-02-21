@@ -157,7 +157,7 @@ OPSW::OPSW(int argc, char* argv[]):
 					int	i;
 					iResult=sscanf(argv[iCount],"-D%d",&i);
 					cDebug = (char)i;
-					if((iResult==NULL)||(iResult==EOF)){
+					if((iResult==0)||(iResult==EOF)){
 						opError(_T("-D"));
 						break;
 					};
